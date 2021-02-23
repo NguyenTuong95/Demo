@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80EBF5F2"
+        tools:context=".WordActivity"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="6dp"
+            android:padding="16dp"
+            android:ems="10"
+            app:cardCornerRadius="20dp">
+
+            <RelativeLayout
+                android:id="@+id/RelativeLayoutSubject"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="36dp">
+                <TextView
+                    android:id="@+id/tv_word_subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="55dp"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textSize="24dp"
+                    android:textStyle="bold|italic"
+                    android:text="Hii">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/iv_speech"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:onClick="@{clickHandler}"
+                    android:src="@drawable/ic_sound_disable"
+                    android:layout_alignParentRight="true">
+
+                </ImageView>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutVNWord"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_below="@id/RelativeLayoutSubject"
+                android:layout_marginTop="50dp">
+
+                <TextView
+                    android:id="@+id/tv_vn_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_centerVertical="true"
+                    android:ems="10"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="6dp"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:singleLine="false"
+                    android:text="vn Text"
+                    android:textSize="22dp"
+                    android:textStyle="italic" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeLayoutVNWord"
+                android:layout_marginTop="160dp"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="6dp"
+                        android:hint="a"
+                        android:textSize="22dp"
+                        android:textStyle="italic" />
+                    <ImageView
+                        android:id="@+id/iv_favourite"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:onClick="@{clickHandler}"
+                        android:src="@drawable/ic_favourite_disable"
+                        android:layout_alignParentRight="true">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_en_word"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/relativeLayoutEdit"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:text="word"
+                    android:textSize="22dp" />
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_en_word"
+                    android:layout_marginTop="40dp">
+                    <Button
+                        android:id="@+id/btn_next_new_word"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="7dp"
+                        android:layout_marginRight="7dp"
+                        android:backgroundTint="@color/button_background_color"
+                        android:onClick="@{clickHandler}"
+                        android:text="Tiếp"
+                        android:textAllCaps="false"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:cornerRadius="18dp">
+
+                    </Button>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</layout>

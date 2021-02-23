@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80EBF5F2"
+        tools:context=".UserActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewName"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="26dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutName"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="70dp">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Name"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:textSize="26dp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below = "@+id/cardViewName"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:cardCornerRadius="26dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutLearnedWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="Từ đã học:"
+                        android:layout_weight="1"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tv_learned_words"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="6dp"
+                        android:text="0"
+                       android:textStyle="bold"
+                        android:layout_alignParentEnd="true"
+                        android:textSize="20dp" />
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutReviewWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/relativeLayoutLearnedWords"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="Từ khó:"
+                        android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/tv_review_words"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                       android:layout_marginRight="6dp"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/relativeLayoutReviewWords"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="Điểm: "
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:textSize="20dp"/>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_below="@id/relativeLayoutScore"
+                    android:id="@+id/RelativeLayoutCheckBox"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="Luyện tập những từ yêu thích"
+                        android:textSize="20dp"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_review_word_favourite"
+                        android:layout_alignParentEnd="true"
+                        android:checked="false"
+                        android:onClick="@{clickHandler}"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/RelativeLayoutCheckBox"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="Từ mỗi tiết học "
+                    android:textSize="20dp" />
+
+                <LinearLayout
+                    android:id="@+id/relativeLayoutNumForLesson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/RelativeLayoutCheckBox"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_lesson_10"
+                        android:text="10"
+                        android:layout_width="0dp"
+                        android:onClick="@{clickHandler}"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:text="15"
+                        android:id="@+id/btn_lesson_15"
+                        android:layout_width="0dp"
+                        android:onClick="@{clickHandler}"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:text="30"
+                        android:id="@+id/btn_lesson_30"
+                        android:layout_width="0dp"
+                        android:onClick="@{clickHandler}"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:text="Từ mỗi tiết luyện tập"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/relativeLayoutNumForLesson"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/relativeLayoutNumForPractice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/relativeLayoutNumForLesson"
+                    android:layout_marginTop="45dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_practice_10"
+                        android:text="10"
+                        android:layout_width="0dp"
+                        android:onClick="@{clickHandler}"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:text="15"
+                        android:id="@+id/btn_practice_15"
+                        android:layout_width="0dp"
+                        android:onClick="@{clickHandler}"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:text="30"
+                        android:id="@+id/btn_practice_30"
+                        android:layout_width="0dp"
+                        android:onClick="@{clickHandler}"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_below="@id/relativeLayoutNumForPractice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/btn_list_word_favourite"
+                        android:onClick="@{clickHandler}"
+                        android:text="Danh sách từ yêu thích"
+                        android:backgroundTint="@color/button_background_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btn_rate_review"
+                        android:layout_below ="@+id/btn_list_word_favourite"
+                        android:text="Đánh giá ứng dụng"
+                        android:backgroundTint="@color/button_background_color"
+                        android:onClick="@{clickHandler}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></Button>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </RelativeLayout>
+</layout>
